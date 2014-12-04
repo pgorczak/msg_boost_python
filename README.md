@@ -15,11 +15,12 @@ There are two covered use cases:
 * Generate converters for messages from some other package
 
 In any case make sure you do the `catkin_python_setup()` to at least generate an
-empty relay package.
+empty package. The minimal setups can be found in the common_msgs packages
+(geometry_msgs_boost_python etc.).
 
 ### "Local" messages
 Simply put `generate_msg_boost_python_converters()` in your CMakeLists.txt.
 Then, in your python scripts use `import my_package.msg_boost_python` (or for "local" scripts `import msg_boost_python`)
 
 ### Other messages
-Look at the common_msgs packages (sensor_msgs_boost_python etc.) for examples.
+Look at the common_msgs packages for examples.

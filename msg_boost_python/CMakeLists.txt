@@ -8,8 +8,6 @@ find_package(catkin REQUIRED COMPONENTS
 find_package(Boost REQUIRED COMPONENTS python)
 find_package(PythonLibs REQUIRED)
 
-catkin_python_setup()
-
 catkin_package(
   CFG_EXTRAS msg_boost_python_macros.cmake
   INCLUDE_DIRS include ${Boost_INCLUDE_DIRS} ${PYTHON_INCLUDE_PATH}

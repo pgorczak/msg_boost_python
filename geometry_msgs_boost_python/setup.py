@@ -4,7 +4,8 @@ from distutils.core import setup
 from catkin_pkg.python_setup import generate_distutils_setup
 
 d = generate_distutils_setup(
-    packages=['geometry_msgs_boost_python']
+    packages=['geometry_msgs_boost_python'],
+    package_dir={'': 'src'}
 )
 
 setup(**d)
