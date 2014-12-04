@@ -37,6 +37,11 @@ target_link_libraries(msg_boost_python
   ${PYTHON_LIBRARIES}
 )
 
+# Mark cpp header files for installation
+install(FILES include/${PROJECT_NAME}/${PROJECT_NAME}.hpp
+ DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+)
+
 # Mark executables and/or libraries for installation
 install(TARGETS msg_boost_python
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
