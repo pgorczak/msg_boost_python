@@ -24,3 +24,34 @@ Then, in your python scripts use `import my_package.msg_boost_python` (or for "l
 
 ### Other messages
 Look at the common_msgs packages for examples.
+
+
+## Try It
+
+TODO
+
+If you know what Boost.Python is about, look at this example which uses the
+converters to mirror a geometry_msgs/Point
+
+```C++
+#include <boost/python/def.hpp>
+#include <boost/python/module.hpp>
+#include <boost/python/args.hpp>
+
+#include <geometry_msgs/Point.h>
+
+geometry_msgs::Point::ConstPtr mirror(geometry_msgs::Point::ConstPtr point_in) {
+  geometry_msgs::Point::Ptr point_out(new geometry_msgs::Point);
+  point_out->x = point_in->x * -1;
+  point_out->y = point_in->y * -1;
+  point_out->z = point_in->z * -1;
+  return point_out;
+}
+
+using namespace boost::python;
+
+BOOST_PYTHON_MODULE(test_module)
+{
+  def("mirror", mirror, args("point"), "Mirror a geometry_msgs/Point");
+}
+```
