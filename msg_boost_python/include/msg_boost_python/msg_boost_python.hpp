@@ -160,6 +160,7 @@ PyObject* MsgFromPython<Msg>::py_class_name_ = utils::make_py_class_name(MsgFrom
 /// Function for convenient converter creation
 template<typename Msg>
 void create_msg_converters() {
+  Py_Initialize(); // Access to Python interpreter
   typedef typename Msg::ConstPtr MsgConstPtr;
   boost::python::to_python_converter<MsgConstPtr, MsgToPython<Msg> >();
   MsgFromPython<Msg>();
