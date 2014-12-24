@@ -47,4 +47,4 @@ Arguments:
 ## More Info
 
 More information and examples can be found
-[on my GitHub page](pgorczak.github.io/msg_boost_python).
+[on my GitHub page](https://pgorczak.github.io/projects/msg_boost_python/).
